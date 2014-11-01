@@ -1,0 +1,165 @@
+<!doctype html>  
+<html>  
+<head>  
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Responsive Heads-Up Grid Example</title>
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+<link href="headsupgrid/hugrid.css" type="text/css" rel="stylesheet" />
+<script src="headsupgrid/jquery-1.6.2.min.js"></script>
+<script src="headsupgrid/hugrid.js"></script>
+<script type="text/javascript">
+	definegrid = function() {
+		var browserWidth = $(window).width(); 
+		if (browserWidth >= 1001) 
+		{
+            pageUnits = 'px';
+            colUnits = 'px';
+			pagewidth = 940;
+			columns = 12;
+			columnwidth = 60;
+			gutterwidth = 20;
+			pagetopmargin = 35;
+			rowheight = 20;
+			gridonload = 'on';
+			makehugrid();
+		} 
+		if (browserWidth <= 1000) 
+		{
+            pageUnits = '%';
+            colUnits = '%';
+			pagewidth = 94;
+			columns = 3;
+			columnwidth = 32;
+			gutterwidth = 2;
+			pagetopmargin = 35;
+			rowheight = 20;
+			gridonload = 'off';
+			makehugrid();
+		}
+		if (browserWidth <= 768) 
+		{
+            pageUnits = '%';
+            colUnits = '%';
+			pagewidth = 96;
+			columns = 2;
+			columnwidth = 49;
+			gutterwidth = 2;
+			pagetopmargin = 35;
+			rowheight = 20;
+			gridonload = 'off';
+			makehugrid();
+		}
+	}
+    $(document).ready(function() {
+		definegrid();
+		setgridonload();
+    });    
+    
+    $(window).resize(function() {
+		definegrid();
+        setgridonresize();
+    });
+</script>
+</head>
+
+<body>
+<div id="full-wrapper">
+	<header id="primary-header">
+		<div id="primary-banner">
+			<img src="images/primary-banner.png" alt="" />
+		</div>
+		
+		<div id="navcontainer">
+			<ul id="navlist">
+				<li id="active"><a href="#" id="current">Item one</a></li>
+				<li><a href="#">Item two</a></li>
+				<li><a href="#">Item three</a></li>
+				<li><a href="#">Item four</a></li>
+				<li><a href="#">Item five</a></li>
+			</ul>
+		</div>	
+	</header>
+	
+	<section id="main-content">
+		<header id="page-title">
+			<h1>This is a page title</h1>
+		</header>
+		
+		<div id="single-column">
+			<article class="single">
+				<p>content</p>
+			</article>
+		</div>
+		
+		<div id="two-column-half">
+				<article class="left-half">
+					<p>content</p>
+				</article>
+				
+				<article class="right-half">
+					<p>content</p>
+				</article>
+	 	</div>
+		
+		<div id="two-column-left">
+				<article class="two-column-left-left-half">
+					<p>content</p>
+				</article>
+				
+				<article class="two-column-left-right-half">
+					<p>content</p>
+				</article>
+		</div>
+	
+		<div id="two-column-right">
+				<article class="two-column-right-left-half">
+					<p>content</p>
+				</article>
+				
+				<article class="two-column-right-right-half">
+					<p>content</p>
+				</article>
+		</div>
+		
+		<div id="three-columns">	
+			<article class="one-third">
+				test
+			</article>
+			
+			<article class="two-third">
+				test
+			</article>
+			
+			<article class="third-third">
+				test
+			</article>
+		</div>
+		
+		<div id="four-column">
+			<article class="four-column-1">
+				<p>content</p>
+			</article>
+			
+			<article class="four-column-2">
+				<p>content</p>
+			</article>
+			
+			<article class="four-column-3">
+				<p>content</p>
+			</article>
+			
+			<article class="four-column-4">
+				<p>content</p>
+			</article>
+		</div>
+		
+		<footer id="main-footer">
+			<p>Copyright 2014, Chris Morda</p>
+		</footer>
+	</section>	
+</div>
+
+</body>
+</html>
